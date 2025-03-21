@@ -16,4 +16,8 @@ url:string="http://localhost:3000/students"
   saveStudents(data:any):Observable<any>{
      return this.https.post(this.url,data)
   }
+
+  deleteStudent(id:number){
+    return this.https.delete(`${this.url}/${id}`)
+  }
 }

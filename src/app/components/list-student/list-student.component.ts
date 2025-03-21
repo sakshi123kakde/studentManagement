@@ -15,4 +15,12 @@ export class ListStudentComponent {
       
     })
   }
+
+  deleteStudent(id : number){
+    // console.log(id);
+    this.student.deleteStudent(id).subscribe((result)=>{
+      console.log(result);
+      this.ngOnInit()
+    });
+  }
 }
