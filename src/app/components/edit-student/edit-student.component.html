@@ -1,1 +1,40 @@
-<p>edit-student works!</p>
+<h2>Edit Student records</h2>
+<div *ngIf="close" class="alert alert-success" role="alert">
+  Student Updated!!
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+<form [formGroup]="editStudent" (ngSubmit)="update()">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Enter name"
+      formControlName="student_name"
+      id="exampleInputEmail1"
+    />
+    <label for="exampleInputEmail1">Age</label>
+    <input
+      type="number"
+      class="form-control"
+      placeholder="Enter age"
+      formControlName="age"
+      id="exampleInputEmail2"
+    />
+    <label for="exampleInputEmail1">Course</label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Enter course"
+      formControlName="course"
+      id="exampleInputEmail3"
+    />
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>

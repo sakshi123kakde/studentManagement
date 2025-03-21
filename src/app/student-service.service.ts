@@ -20,4 +20,12 @@ url:string="http://localhost:3000/students"
   deleteStudent(id:number){
     return this.https.delete(`${this.url}/${id}`)
   }
+
+  getStudentById(id:number){
+    return this.https.get(`${this.url}/${id}`)
+  }
+
+  updateStudent(id:number,data:any){
+   return this.https.put(`${this.url}/${id}`,data)
+  }
 }
