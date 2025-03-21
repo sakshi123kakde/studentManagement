@@ -33,5 +33,9 @@ registerUrl:string="http://localhost:3000/register";
   register(data:any){
       return this.https.post(this.registerUrl,data)
    }
+
+   login(){
+    return this.https.get(this.registerUrl);
+   }
   }
 

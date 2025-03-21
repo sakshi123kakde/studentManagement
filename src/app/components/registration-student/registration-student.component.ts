@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { StudentServiceService } from 'src/app/student-service.service';
 import { FormGroup,FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-registration-student',
   templateUrl: './registration-student.component.html',
@@ -9,7 +10,7 @@ import { FormGroup,FormControl } from '@angular/forms';
 export class RegistrationStudentComponent {
 
    close:boolean=false;
-  constructor(private studentService :StudentServiceService){}
+  constructor(private studentService :StudentServiceService ){}
   
     register=new FormGroup({
       email:new FormControl(''),
@@ -24,6 +25,10 @@ export class RegistrationStudentComponent {
         console.log(result);
         this.register.reset({})
         this.close=true
-      })
+
+      //   this.router.navigate(['login'])
+      // },err=>{
+      //   alert("something went wrong")
+       })
     }
 }
