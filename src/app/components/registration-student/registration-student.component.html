@@ -1,1 +1,43 @@
-<p>registration-student works!</p>
+<h2>Registration</h2>
+<div *ngIf="close" class="alert alert-success" role="alert">
+  record inserted !!
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+<form [formGroup]="register" (ngSubmit)="save()">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email</label>
+    <input
+      type="Email"
+      class="form-control"
+      placeholder="Enter Email"
+      formControlName="email"
+      id="exampleInputEmail1"
+      required
+    />
+    <label for="exampleInputEmail1">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Enter name"
+      formControlName="name"
+      id="exampleInputEmail2"
+      required
+    />
+    <label for="exampleInputEmail1">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      placeholder="Enter Password"
+      formControlName="password"
+      id="exampleInputEmail3"
+      required
+    />
+
+    <button type="submit" class="btn btn-primary my-5">Register</button>
+  </div>
+</form>

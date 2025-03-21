@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class StudentServiceService {
 url:string="http://localhost:3000/students"
+registerUrl:string="http://localhost:3000/register";
   constructor(private https : HttpClient) { }
 
   getStudents(){
@@ -28,4 +29,9 @@ url:string="http://localhost:3000/students"
   updateStudent(id:number,data:any){
    return this.https.put(`${this.url}/${id}`,data)
   }
-}
+
+  register(data:any){
+      return this.https.post(this.registerUrl,data)
+   }
+  }
+
